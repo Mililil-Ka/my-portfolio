@@ -5,11 +5,12 @@
 
 ## Стек
 
-- React 18
-- Vite
-- Tailwind CSS
-- Framer Motion (в планах)
-- ProxyAPI (OpenAI / Claude / Gemini через один ключ)
+- React 19
+- Vite 8
+- Tailwind CSS 4
+- Framer Motion 
+- Manrope (шрифт)
+- ProxyAPI (для AI-бота)
 
 ## Запуск локально
 

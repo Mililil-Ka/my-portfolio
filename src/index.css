@@ -1,1 +1,49 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+
+  --color-bg: #0B0F19;
+  --color-card: #1E2640;
+  --color-border: #2A3454;
+  --color-text: #E5E9F0;
+  --color-muted: #94A3B8;
+
+  --color-accent: #8B5CF6;
+  --color-accent-hover: #7C4DEB;
+  --color-accent-2: #06B6D4;
+
+  --radius-card: 1rem;
+  --radius-btn: 0.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  /* чтобы sticky-header не перекрывал секции при скролле */
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
