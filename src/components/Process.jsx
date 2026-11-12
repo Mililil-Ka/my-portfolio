@@ -25,7 +25,7 @@ export default function Process() {
           </span>
         </h2>
         <p className="text-lg text-muted">
-          От первого сообщения до запуска — четыре прозрачных шага.
+          От первого сообщения до запуска, четыре прозрачных шага.
         </p>
       </motion.div>
 

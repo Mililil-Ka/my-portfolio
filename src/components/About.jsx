@@ -46,7 +46,7 @@ export default function About() {
           <img
             src={avatar}
             alt="Ирина"
-            className="relative h-40 w-40 rounded-full border-4 border-bg object-cover md:h-48 md:w-48"
+            className="relative h-48 w-48 rounded-full border-4 border-bg object-cover md:h-56 md:w-56"
           />
         </div>
       </motion.div>
@@ -64,13 +64,11 @@ export default function About() {
             мне
           </span>
         </h2>
-        <p className="text-lg leading-relaxed text-muted">
+        <p className="text-lg leading-relaxed text-accent-2">
           Меня зовут Ирина. Я frontend-разработчик и AI-энтузиаст.
         </p>
         <p className="mt-4 text-lg leading-relaxed text-muted">
-          Делаю сайты, которые не просто выглядят хорошо — они работают на
-          бизнес: отвечают клиентам, продают, экономят время. А ещё генерирую
-          визуал и подключаю AI-помощников.
+          Я создаю полноценные цифровые экосистемы с нуля. В моем арсенале разработка современных сайтов и онлайн-визиток, интеграция умных AI-помощников, генерация уникальных картинок и логотипов, а также создание и внедрение QR-кодов. Меня вдохновляют новые технологии и нейросети: я постоянно учусь и внедряю передовые AI-решения, чтобы ваш бизнес работал на опережение. Беру на себя все этапы от первой идеи до готового продукта.
         </p>
       </motion.div>
 
@@ -81,7 +79,7 @@ export default function About() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
       >
-        <p className="mb-6 text-center text-sm uppercase tracking-widest text-muted">
+        <p className="mb-6 text-center text-sm uppercase tracking-widest text-accent-2">
           Мой стек
         </p>
 

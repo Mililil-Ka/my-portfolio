@@ -107,7 +107,7 @@ export default function ContactModal({ isOpen, onClose }) {
 
             <h3 className="mb-1 text-xl font-bold">Связаться со мной</h3>
             <p className="mb-6 text-sm text-muted">
-              Выберите удобный способ — отвечу быстро.
+              Выберите удобный способ, отвечу быстро.
             </p>
 
             <div className="flex flex-col gap-3">

@@ -25,7 +25,7 @@ export default function Qr() {
         </h2>
         <p className="text-lg text-muted">
           Наведи камеру телефона или кликни, чтобы открыть сайт. Каждый QR
-          ведёт на живой проект.
+          ведёт на проект.
         </p>
       </motion.div>
 

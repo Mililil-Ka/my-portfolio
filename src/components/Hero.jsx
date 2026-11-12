@@ -12,7 +12,7 @@ export default function Hero() {
       id="hero"
       className="relative mx-auto max-w-7xl overflow-hidden px-6 py-24 lg:py-32"
     >
-      <div className="grid items-center gap-6 lg:grid-cols-[1fr_3.2fr_1fr]">
+      <div className="grid items-center gap-6 lg:grid-cols-[1fr_2.2fr_1fr]">
         {/* Картинка слева — hero2 */}
         <motion.div
           className="hidden lg:block"
@@ -23,8 +23,8 @@ export default function Hero() {
           <motion.img
             src={hero2}
             alt=""
-            className="w-full max-w-sm -ml-10"
-            animate={{ y: [0, -35, 0] }}
+            className="w-full max-w-ms -ml-15"
+            animate={{ y: [0, -15, 0] }}
             transition={{
               duration: 6,
               repeat: Infinity,
@@ -41,24 +41,22 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <p className="mb-4 text-sm uppercase tracking-widest text-accent-2">
-            Frontend + AI
+            Digital-помощник | Веб-разработчик | AI-энтузиаст
           </p>
 
           <h1 className="mb-6 max-w-3xl text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-            Сайт,{' '}
+            Превращаю{' '}
             <span className="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">
-              AI-помощник
+            идеи в живые 
             </span>{' '}
-            и визуал —{' '}
+            цифровые{' '}
             <span className="bg-gradient-to-r from-accent-2 to-accent bg-clip-text text-transparent">
-              под ключ
+              решения
             </span>
           </h1>
 
           <p className="mb-10 max-w-xl text-lg text-muted">
-            Создаю сайты, которые отвечают клиентам 24/7, генерирую уникальный
-            визуал и подключаю QR-коды. Всё — в одном месте, от концепта до
-            деплоя.
+            Твой проект достоин лучшего. Я объединяю современный дизайн, чистый код и искусственный интеллект, чтобы создать цифровой продукт, который приносит прибыль. Давай сделаем это вместе.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -78,6 +76,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        {/* Картинка справа — hero1 */}
         <motion.div
           className="hidden lg:block"
           initial={{ opacity: 0, x: 80 }}
@@ -87,7 +86,7 @@ export default function Hero() {
           <motion.img
             src={hero1}
             alt=""
-            className="w-full max-w-sm ml-auto -mr-8"
+            className="w-full max-w-ms ml-auto -mr-8"
             animate={{ y: [0, -15, 0] }}
             transition={{
               duration: 6,
