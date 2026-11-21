@@ -23,12 +23,12 @@ export function MessageInput({
         onChange={(e) => setText(e.target.value)}
         placeholder="Введите сообщение..."
         disabled={disabled}
-        className="flex-1 px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 disabled:bg-gray-100"
+        className="flex-1 px-3 py-2 border border-border text-text rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent disabled:opacity-50 placeholder:text-muted"
       />
       <button
         type="submit"
         disabled={disabled || !text.trim()}
-        className="px-4 py-2 text-white rounded-lg text-sm disabled:bg-gray-300 disabled:cursor-not-allowed"
+        className="px-4 py-2 text-white rounded-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed"
         style={{ backgroundColor: primaryColor }}
       >
         Отправить
