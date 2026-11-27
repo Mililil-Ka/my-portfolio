@@ -8,7 +8,6 @@ export function ChatWidget({ theme = {} }) {
   const [isOpen, setIsOpen] = useState(false);
   const { messages, isStreaming, error, sendMessage, reset } = useChat();
 
-  // Слушаем событие открытия чата с сайта
   useEffect(() => {
     function handleOpenChat() {
       setIsOpen(true);
@@ -18,9 +17,7 @@ export function ChatWidget({ theme = {} }) {
   }, []);
 
   const {
-    primaryColor = '#3b82f6',
-    avatarUrl,
-    greeting = 'Здравствуйте! Чем могу помочь?',
+    greeting = 'Привет! Я AI-помощник Ирины. Расскажу об услугах, покажу примеры работ и помогу связаться. С чего начнем? 😊',
     title = 'AI-помощник',
     position = 'bottom-right',
   } = theme;
@@ -35,27 +32,17 @@ export function ChatWidget({ theme = {} }) {
   return (
     <div className={`fixed ${positionClass} z-50`} translate="no">
       {isOpen && (
-        <div className="mb-4 w-80 h-96 bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border">
+        <div className="mb-4 w-80 h-96 bg-bg rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-border">
           {/* Шапка */}
-          <div
-            className="text-white px-4 py-3 flex justify-between items-center shrink-0"
-            style={{ backgroundColor: primaryColor }}
-          >
+          <div className="bg-card px-4 py-3 flex justify-between items-center shrink-0 border-b border-border">
             <div className="flex items-center gap-2">
-              {avatarUrl && (
-                <img
-                  src={avatarUrl}
-                  alt=""
-                  className="w-6 h-6 rounded-full object-cover"
-                />
-              )}
-              <span className="font-semibold text-sm">{title}</span>
+              <span className="font-semibold text-sm text-text">{title}</span>
             </div>
             <div className="flex items-center gap-3">
               {messages.length > 0 && (
                 <button
                   onClick={reset}
-                  className="text-white hover:opacity-75 text-xs"
+                  className="text-muted hover:text-text text-xs transition-colors"
                   title="Очистить историю"
                 >
                   Очистить
@@ -63,7 +50,7 @@ export function ChatWidget({ theme = {} }) {
               )}
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-white hover:opacity-75 text-lg leading-none"
+                className="text-muted hover:text-text text-lg leading-none transition-colors"
                 aria-label="Закрыть чат"
               >
                 ×
@@ -72,21 +59,20 @@ export function ChatWidget({ theme = {} }) {
           </div>
 
           {/* Кнопки быстрых контактов */}
-          <div className="flex gap-2 p-3 border-b bg-gray-50 overflow-x-auto shrink-0">
-            <a href="https://t.me/bug_bug97" target="_blank" rel="noreferrer" className="shrink-0 px-3 py-1.5 bg-blue-100 text-blue-600 rounded-full text-xs font-medium hover:bg-blue-200 transition">Telegram</a>
-            <a href="https://wa.me/79964128534" target="_blank" rel="noreferrer" className="shrink-0 px-3 py-1.5 bg-green-100 text-green-600 rounded-full text-xs font-medium hover:bg-green-200 transition">WhatsApp</a>
-            <a href="mailto:irinaka307@gmail.com" className="shrink-0 px-3 py-1.5 bg-cyan-100 text-cyan-600 rounded-full text-xs font-medium hover:bg-cyan-200 transition">Email</a>
+          <div className="flex gap-2 p-3 border-b border-border bg-card overflow-x-auto shrink-0">
+            <a href="https://t.me/bug_bug97" target="_blank" rel="noreferrer" className="shrink-0 px-3 py-1.5 bg-bg border border-border text-accent rounded-full text-xs font-medium hover:border-accent transition">Telegram</a>
+            <a href="https://wa.me/79964128534" target="_blank" rel="noreferrer" className="shrink-0 px-3 py-1.5 bg-bg border border-border text-accent rounded-full text-xs font-medium hover:border-accent transition">WhatsApp</a>
+            <a href="mailto:irinaka307@gmail.com" className="shrink-0 px-3 py-1.5 bg-bg border border-border text-accent rounded-full text-xs font-medium hover:border-accent transition">Email</a>
           </div>
 
           {/* Основная область */}
-          <div className="flex-1 min-h-0 flex flex-col relative">
+          <div className="flex-1 min-h-0 flex flex-col relative bg-bg">
             {error ? (
               <FallbackForm onSubmit={handleFallbackSubmit} />
             ) : (
               <MessageList
                 messages={messages}
                 greeting={greeting}
-                primaryColor={primaryColor}
               />
             )}
           </div>
@@ -96,7 +82,6 @@ export function ChatWidget({ theme = {} }) {
             <MessageInput
               onSend={sendMessage}
               disabled={isStreaming}
-              primaryColor={primaryColor}
             />
           )}
         </div>
@@ -105,8 +90,7 @@ export function ChatWidget({ theme = {} }) {
       {/* Кнопка открытия/закрытия */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="w-14 h-14 rounded-full text-white shadow-lg flex items-center justify-center text-2xl transition-colors"
-        style={{ backgroundColor: primaryColor }}
+        className="w-14 h-14 rounded-full text-white shadow-lg flex items-center justify-center text-2xl transition-all bg-gradient-to-br from-accent to-accent-2 hover:opacity-90"
         aria-label="Открыть чат"
       >
         {isOpen ? '×' : '💬'}
